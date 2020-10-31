@@ -17,6 +17,10 @@ public class Controller implements EventHandler<ActionEvent> {
     private Label titleMiembro1;
     @FXML
     private Label textMiembro1;
+    @FXML
+    private Label courseMiembro1;
+    @FXML
+    private Label moduleMiembro1;
 
     Model miembro1 = new Model("Miembro 1:", "José María Muñoz Quijada");
 
@@ -26,9 +30,12 @@ public class Controller implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        if((Button)actionEvent.getSource() == btnMiembro1) {
+        if(actionEvent.getSource() == btnMiembro1) {
             titleMiembro1.setText(miembro1.getTitle());
             textMiembro1.setText(miembro1.getMiembro());
+
+            courseMiembro1.setText(miembro1.getCourse());
+            moduleMiembro1.setText(miembro1.getModule());
         }
     }
 }
